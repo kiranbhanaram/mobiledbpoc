@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8;" />
+            <title>Shell Executive Dashboard</title>
+            
+            <!-- External Stylesheets -->
+            <link rel="stylesheet" href="./libs/jstree/custom/themes/default/style.min.css">
+                <link rel="stylesheet" href="./libs/jqgrid/4.15.2/css/jquery-ui.min.css" />
+                <link rel="stylesheet" href="./libs/jqgrid/4.15.2/css/ui.jqgrid.min.css" />
+                <link rel="stylesheet" href="./libs/bulma-grid/bulma-grid.min.css" />
+                
+                <!-- External libraries -->
+                <script src="./libs/jquery/2.2.4/jquery.min.js"></script>
+                <script src="./libs/highcharts/6.0.3/highcharts.js"></script>
+                <script src="./libs/highcharts/6.0.3/highcharts-more.js"></script>
+                <script src="./libs/jstree/custom/jstree.js"></script>
+                <script src="./libs/lz-string/lz-string.min.js"></script>
+                <script src="./libs/lz-string/base64-string.js"></script>
+                <script src="./libs/html2canvas/0.4.1/html2canvas.js"></script>
+                <script src="./libs/filesaver/fileSaver.js"></script>
+                <script src="./libs/canvg/1.3.0/canvg.min.js"></script>
+                <script src="./libs/rgbcolor/rgbcolor.js"></script>
+                <script src="./libs/jspdf/1.0.272/jspdf.debug.js"></script>
+                <script src="./libs/jqgrid/4.15.2/jquery.jqgrid.min.js"></script>
+                <script src="./libs/jsencrypt/jsencrypt.min.js"></script>
+                <script src="./libs/crypto-js/Crypto.js"></script>
+                <script src="./libs/crypto-js/AES.js"></script>
+                <script src="./libs/crypto-js/BlockModes.js"></script>
+                <script type="text/javascript" src="cordova.js"></script>
+                
+                <!-- Internal JavaScript libraries -->
+                <script src="./js/shell.execdblpig.mobile.min.js"></script>
+                <script src="./js/shell.execdblp.encryption.min.js"></script>
+                <script src="./js/shell.execdblp.offlinedata.min.js"></script>
+                
+                <script>
+                    $(document).ready(function () {
+                                      // check if this code is running from a mobile device or from a desktop
+                                      var app = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;
+                                      if ( app ) {
+                                      document.addEventListener("deviceready", shell.app.execdblp.offlinereader.handleDeviceReady, false);
+                                      document.addEventListener("resume", shell.app.execdblp.offlinereader.handleDeviceReady, false);
+                                      document.addEventListener("pause", shell.app.execdblp.offlinereader.handleDevicePause, false);
+                                      
+                                      } else {
+                                      //shell.app.execdblp.offlinereader.showFileSelector();
+                                      $("#jbi_app_lp").show();
+                                      }
+                                      
+                                      //shell.app.execdblp.offlinereader.build(null, false);
+                                      });
+                    </script>
+    </head>
+    
+    <body>
+        <div id="jbi_app_lp" style="display:none;"></div>
+        <div id="jbi_app_report" style="display:none;"></div>
+    </body>
+    
+</html>
+

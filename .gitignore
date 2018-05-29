@@ -1,0 +1,5 @@
+app/execdblpmob/platforms/
+app/execdblpmob/plugins/
+app/execdblpmob/package-lock.json
+app/execdblpmob/node_modules
+node_modules
